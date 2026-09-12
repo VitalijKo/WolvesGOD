@@ -3,8 +3,8 @@ import math
 from copy import deepcopy
 from collections import Counter
 from colorama import Back, Fore, Style
-from translations import parse_player_token
 
+from translations import parse_player_token
 
 _STOP = {
 	'a', 'an', 'the', 'is', 'it', 'in', 'on', 'at', 'to', 'of', 'and', 'or', 'but',
@@ -13,6 +13,7 @@ _STOP = {
 	'yep', 'nope', 'just', 'so', 'do', 'did', 'have', 'has', 'had', 'will', 'can',
 	'get', 'got', 'let', 'like', 'know', 'think', 'see', 'go', 'going', 'come'
 }
+
 
 def _tokenise(text):
 	tokens = re.findall(r"[a-z']+", text.lower())

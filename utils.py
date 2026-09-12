@@ -9,6 +9,7 @@ import logging
 from pathlib import Path
 from colorama import Back, Fore, Style, init
 from dotenv import dotenv_values
+
 from updater import MentalistUpdater
 
 init(autoreset=True)

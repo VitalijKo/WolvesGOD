@@ -305,6 +305,7 @@ setup(
 
 			else:
 				print(result.stderr)
+
 				return False
 		except subprocess.TimeoutExpired:
 			return False
@@ -1052,6 +1053,7 @@ def main():
 	
 	try:
 		success = orchestrator.execute_build_pipeline()
+
 		sys.exit(0 if success else 1)
 	except KeyboardInterrupt:
 		print(f'\n\n{Fore.YELLOW}Build interrupted by user{Fore.RESET}')

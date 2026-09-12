@@ -4,9 +4,13 @@ from copy import deepcopy
 from itertools import combinations
 from functools import lru_cache
 from colorama import Back, Fore, Style
+from pathlib import Path
+
 from data_protection import save_encrypted, load_encrypted
 from auth_protection import _integrity_checker
-from utils import MENTALIST_DATA_DIR
+
+MENTALIST_DATA_DIR = Path(__file__).parent.parent / '.mentalist_data'
+
 
 class GameState:
 	def __init__(self, tracker):
@@ -339,13 +343,19 @@ class Mastermind:
 
 			for key, val in constraints.items():
 				if key == 'status' and player['dead'] != val:
-					valid = False; break
+					valid = False
+
+					break
 
 				if key == 'team' and player.get('team') != val:
-					valid = False; break
+					valid = False
+
+					break
 
 				if key == 'is_doused' and not player.get('doused'):
-					valid = False; break
+					valid = False
+
+					break
 
 			if valid:
 				targets.append(player)
@@ -370,6 +380,7 @@ class Mastermind:
 	def predict(self, max_depth=3, prob_threshold=0.01, player_name=None):
 		if _integrity_checker.get_corruption_handler().is_phantom_mode():
 			fake_scenarios = []
+
 			for _ in range(3):
 				fake_scenarios.append({
 					'state_tuple': (),
@@ -390,6 +401,7 @@ class Mastermind:
 			'score': 0,
 			'path_signature_set': set()
 		}]
+		
 		final_scenarios = []
 
 		for depth in range(max_depth):

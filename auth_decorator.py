@@ -4,6 +4,7 @@ import traceback
 from functools import wraps
 from colorama import Back, Fore, Style, init
 from dotenv import dotenv_values
+
 from auth_protection import AntiDebug, WindowsAntiDebug, _integrity_checker
 
 init(autoreset=True)

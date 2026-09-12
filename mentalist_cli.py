@@ -27,6 +27,7 @@ if getattr(sys, 'frozen', False):
 			break
 
 from colorama import Fore, Back, Style, init
+
 from utils import set_launch_mode, check_updates_on_startup, banner
 from tracker import Tracker
 from booster import Booster

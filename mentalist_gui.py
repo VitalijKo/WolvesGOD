@@ -1,7 +1,7 @@
 import os
 import sys
 import warnings
-
+ы
 warnings.filterwarnings('ignore', category=Warning, module='gevent')
 
 from gevent import monkey

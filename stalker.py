@@ -20,6 +20,7 @@ from playsound3 import playsound
 from colorama import Back, Fore, Style
 from dotenv import dotenv_values
 from pathlib import Path
+
 from auth_decorator import require_module_auth
 from auth_protection import _integrity_checker
 from data_protection import save_encrypted, load_encrypted
